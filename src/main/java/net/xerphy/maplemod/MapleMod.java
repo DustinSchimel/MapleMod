@@ -12,6 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.xerphy.maplemod.block.MapleBlocks;
 import net.xerphy.maplemod.item.MapleCreativeModeTabs;
 import net.xerphy.maplemod.item.MapleItems;
 import org.slf4j.Logger;
@@ -28,6 +29,7 @@ public class MapleMod
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         MapleItems.register(modEventBus);
+        MapleBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
@@ -51,6 +53,13 @@ public class MapleMod
         {
             event.accept(MapleItems.PIG_TAIL);
             event.accept(MapleItems.SNAIL_SHELL);
+
+            event.accept(MapleBlocks.OMOK_TABLE_BLOCK);
+        }
+
+        if (event.getTab() == CreativeModeTabs.FUNCTIONAL_BLOCKS)
+        {
+            event.accept(MapleBlocks.OMOK_TABLE_BLOCK);
         }
     }
 

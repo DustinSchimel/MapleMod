@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "maplemod:block/omok_table_block"
+    },
+    "facing=south": {
+      "model": "maplemod:block/omok_table_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "maplemod:block/omok_table_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "maplemod:block/omok_table_block",
+      "y": 90
+    }
+  }
+}
